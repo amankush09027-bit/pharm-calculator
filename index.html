@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>B.Pharm Smart Calculator</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <div class="hero">
+        <h1>💊 B.Pharm Smart Calculator</h1>
+        <p>
+            Pharmaceutics • Chemistry • Analysis • Pharmacology • Biochemistry
+        </p>
+    </div>
+
+    <!-- MENU -->
+    <div class="tabs">
+
+        <button class="tab active" data-panel="flow">
+            Powder Flow
+        </button>
+
+        <button class="tab" data-panel="chem">
+            Chemistry
+        </button>
+
+        <button class="tab" data-panel="assay">
+            Assay
+        </button>
+
+        <button class="tab" data-panel="dose">
+            Dose
+        </button>
+
+        <button class="tab" data-panel="stats">
+            Statistics
+        </button>
+
+        <button class="tab" data-panel="drug">
+            Drug Database
+        </button>
+
+    </div>
+
+    <!-- ANGLE OF REPOSE -->
+    <div id="flow" class="panel active">
+
+        <h2>Angle of Repose + Powder Flow</h2>
+
+        <div class="grid">
+
+            <div>
+                <label>Height (h)</label>
+                <input
+                    id="h"
+                    type="number"
+                    step="any"
+                    placeholder="Enter height"
+                >
+            </div>
+
+            <div>
+                <label>Radius (r)</label>
+                <input
+                    id="r"
+                    type="number"
+                    step="any"
+                    placeholder="Enter radius"
+                >
+            </div>
+
+        </div>
+
+        <button class="btn" onclick="angle()">
+            Calculate
+        </button>
+
+        <div id="flowOut" class="result">
+            Enter height and radius.
+        </div>
+
+    </div>
+
+
+    <!-- CHEMISTRY -->
+    <div id="chem" class="panel">
+
+        <h2>Molarity & Normality Calculator</h2>
+
+        <div class="grid">
+
+            <div>
+                <label>Mass (g)</label>
+                <input id="mass" type="number" step="any">
+            </div>
+
+            <div>
+                <label>Molecular Weight</label>
+                <input id="mw" type="number" step="any">
+            </div>
+
+            <div>
+                <label>Volume (L)</label>
+                <input id="vol" type="number" step="any">
+            </div>
+
+        </div>
+
+        <button class="btn" onclick="chemistry()">
+            Calculate
+        </button>
+
+        <div id="chemOut" class="result">
+            Enter values.
+        </div>
+
+    </div>
+
+
+    <!-- ASSAY -->
+    <div id="assay" class="panel">
+
+        <h2>Assay Calculator</h2>
+
+        <label>Sample Weight (mg)</label>
+        <input id="sampleWeight" type="number" step="any">
+
+        <label>Standard / Reference Value</label>
+        <input id="standardValue" type="number" step="any">
+
+        <button class="btn" onclick="calculateAssay()">
+            Calculate
+        </button>
+
+        <div id="assayOut" class="result">
+            Enter values.
+        </div>
+
+    </div>
+
+
+    <!-- DOSE -->
+    <div id="dose" class="panel">
+
+        <h2>Dose Calculator</h2>
+
+        <label>Required Dose (mg)</label>
+        <input id="requiredDose" type="number" step="any">
+
+        <label>Available Dose (mg)</label>
+        <input id="availableDose" type="number" step="any">
+
+        <label>Available Volume (mL)</label>
+        <input id="availableVolume" type="number" step="any">
+
+        <button class="btn" onclick="calculateDose()">
+            Calculate
+        </button>
+
+        <div id="doseOut" class="result">
+            Enter values.
+        </div>
+
+    </div>
+
+
+    <!-- STATISTICS -->
+    <div id="stats" class="panel">
+
+        <h2>Statistics Calculator</h2>
+
+        <label>Enter Numbers</label>
+
+        <input
+            id="numbers"
+            type="text"
+            placeholder="Example: 10, 20, 30, 40"
+        >
+
+        <button class="btn" onclick="calculateStats()">
+            Calculate
+        </button>
+
+        <div id="statsOut" class="result">
+            Enter numbers.
+        </div>
+
+    </div>
+
+
+    <!-- DRUG DATABASE -->
+    <div id="drug" class="panel">
+
+        <h2>Drug Database</h2>
+
+        <label>Enter Drug Name</label>
+
+        <input
+            id="drugName"
+            type="text"
+            placeholder="Example: Paracetamol"
+        >
+
+        <button class="btn" onclick="searchDrug()">
+            Search
+        </button>
+
+        <div id="drugOut" class="result">
+            Enter drug name.
+        </div>
+
+    </div>
+
+</div>
+
+<!-- JavaScript File -->
+<script src="script.js"></script>
+
+</body>
+</html>
